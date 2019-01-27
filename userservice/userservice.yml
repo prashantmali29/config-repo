@@ -1,6 +1,7 @@
 spring:
   jpa:
-    hibernate:      ddl-auto: update
+    hibernate:
+      ddl-auto: update
     show-sql: "true"
     properties: 
       hibernate: 
@@ -10,8 +11,22 @@ spring:
     driver-class-name: "com.mysql.jdbc.Driver"
     username: "root"
     password:  "root"
-    tomcat:      max-active: 100
+    tomcat:
+      max-active: 100
       max-idle: 8
       min-idle: 8
-security:  basic:    enabled: false
-server:  port: 8081       
+security:
+  basic:
+    enabled: false
+server:
+  port: 8081     
+
+eureka:
+  instance:
+    perferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  
